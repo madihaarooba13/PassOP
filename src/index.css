@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@layer components {
+  .mycontainer {
+    @apply container px-40 py-16 mx-auto ;
+  }
+}
+body {
+  background-color: #f0fdf4; /* very light green base */
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(134, 239, 172, 0.3), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(74, 222, 128, 0.25), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(187, 247, 208, 0.3), transparent 40%),
+    linear-gradient(to bottom right, rgba(240, 253, 244, 1), rgba(236, 253, 245, 1));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Optional: Smooth blending */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(74, 222, 128, 0.15), transparent 70%);
+  filter: blur(100px);
+  z-index: -1;
+}
